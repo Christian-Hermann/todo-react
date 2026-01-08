@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 export default function App() {
-  const todos = ["gym", "eat", "work"];
+  const [todos, setTodos] = useState(["gym", "eat", "work"]);
+
   return (
     <div>
       <h1>Todo App</h1>

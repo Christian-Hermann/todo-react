@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TodoForm from "./components/TodoForm";
 
 export default function App() {
   const [todos, setTodos] = useState(["gym", "eat", "work"]);
@@ -12,8 +13,7 @@ export default function App() {
   return (
     <div>
       <h1>Todo App</h1>
-      <input value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={addTodo}>Add todo</button>
+      <TodoForm text={text} setText={setText} addTodo={addTodo} />
       <ul>
         {todos.map((todo) => (
           <li key={todo}>{todo}</li>

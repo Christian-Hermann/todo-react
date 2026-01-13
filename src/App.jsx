@@ -14,6 +14,17 @@ export default function App() {
     setText("");
   }
 
+  function toggleTodo(indexToggle) {
+    const newTodos = todos.map((todo, index) => {
+      if (index === indexToggle) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+
+    setTodos(newTodos);
+  }
+
   return (
     <div>
       <h1>Todo App</h1>
@@ -21,7 +32,11 @@ export default function App() {
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>
-            <input type="checkbox" checked={todo.completed} />
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => toggleTodo(index)}
+            />
             {todo.text}
           </li>
         ))}

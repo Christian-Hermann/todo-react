@@ -20,7 +20,10 @@ export default function App() {
       <TodoForm text={text} setText={setText} addTodo={addTodo} />
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>{todo.text}</li>
+          <li key={index}>
+            <input type="checkbox" checked={todo.completed} />
+            {todo.text}
+          </li>
         ))}
       </ul>
     </div>

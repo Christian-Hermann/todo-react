@@ -25,6 +25,11 @@ export default function App() {
     setTodos(newTodos);
   }
 
+  function deleteTodo(indexDelete) {
+    const newTodos = todos.filter((todo, index) => index !== indexDelete);
+    setTodos(newTodos);
+  }
+
   return (
     <div>
       <h1>Todo App</h1>

@@ -43,6 +43,7 @@ export default function App() {
               onChange={() => toggleTodo(index)}
             />
             {todo.text}
+            <button>Delete</button>
           </li>
         ))}
       </ul>

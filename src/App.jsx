@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -34,6 +35,7 @@ export default function App() {
     <div>
       <h1>Todo App</h1>
       <TodoForm text={text} setText={setText} addTodo={addTodo} />
+      <TodoList />
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>

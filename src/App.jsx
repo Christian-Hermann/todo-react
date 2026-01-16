@@ -35,20 +35,7 @@ export default function App() {
     <div>
       <h1>Todo App</h1>
       <TodoForm text={text} setText={setText} addTodo={addTodo} />
-      <TodoList />
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => toggleTodo(index)}
-            />
-            {todo.text}
-            <button onClick={() => deleteTodo(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 }

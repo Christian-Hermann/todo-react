@@ -5,11 +5,20 @@ import TodoList from "./components/TodoList";
 const STORAGE_KEY = "todos";
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    { text: "gym", completed: false },
-    { text: "eat", completed: false },
-    { text: "work", completed: false },
-  ]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem(STORAGE_KEY);
+
+    if (savedTodos) {
+      return JSON.parse(savedTodos);
+    }
+
+    return [
+      { text: "gym", completed: false },
+      { text: "eat", completed: false },
+      { text: "work", completed: false },
+    ];
+  });
+
   const [text, setText] = useState("");
 
   function addTodo() {
@@ -34,12 +43,8 @@ export default function App() {
   }
 
   useEffect(() => {
-    const savedTodos = localStorage.getItem(STORAGE_KEY);
-
-    if (savedTodos) {
-      setTodos(JSON.parse(savedTodos));
-    }
-  }, []);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div>

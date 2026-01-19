@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+
+const STORAGE_KEY = "todos";
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -30,6 +32,14 @@ export default function App() {
     const newTodos = todos.filter((todo, index) => index !== indexDelete);
     setTodos(newTodos);
   }
+
+  useEffect(() => {
+    const savedTodos = localStorage.getItem(STORAGE_KEY);
+
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    }
+  }, []);
 
   return (
     <div>

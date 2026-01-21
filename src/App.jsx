@@ -48,8 +48,8 @@ export default function App() {
   }, [todos]);
 
   return (
-    <div>
-      <h1>Todo App</h1>
+    <div className="app">
+      <h1>Todos...</h1>
       <TodoForm text={text} setText={setText} addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>

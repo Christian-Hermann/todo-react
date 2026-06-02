@@ -4,46 +4,67 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Courier New", Courier, monospace;
-  background-color: rgb(51, 150, 200);
+
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #222;
 }
 
 .app {
-  max-width: 500px;
-  margin: 0;
-  background: rgb(164, 205, 252);
-  padding: 20px;
-  border-radius: 4px;
-  border: 1px solid rgb(1, 34, 248);
+  width: 90%;
+  max-width: 430px;
+  background-color: white;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 10px;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
 li {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  font-size: 20px;
-  font-weight: 700;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+li span {
+  flex: 1;
 }
 
 button {
-  margin-left: auto;
+  padding: 8px 10px;
   cursor: pointer;
-  background-color: beige;
-  border: 1px solid black;
-  font-size: 14px;
-  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #6d85ce;
+  color: white;
 }
 
-input[type="checkbox"] {
-  transform: scale(1.4);
+.add-btn {
+  background-color: #7bb7ff;
+}
+
+.delete-btn {
+  background-color: #d9534f;
 }
